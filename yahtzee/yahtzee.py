@@ -51,7 +51,7 @@ def expected_value(held_dice, num_die_sides, num_free_dice):
 
     Returns a floating point expected value
     """
-    _rolls = gen_all_sequences(range(1, num_die_sides), num_free_dice)
+    _rolls = gen_all_sequences(range(1, num_die_sides+1), num_free_dice)
     return sum([score(held_dice + _roll) for _roll in _rolls]) / float(len(_rolls))
 
 
