@@ -25,7 +25,6 @@ def gen_all_sequences(outcomes, length):
         answer_set = temp_set
     return answer_set
 
-
 def score(hand):
     """
     Compute the maximal score for a Yahtzee hand according to the
@@ -35,10 +34,7 @@ def score(hand):
 
     Returns an integer score 
     """
-    return 0 if len(hand)==0 \
-            else max([_num*hand.count(_num) for \
-                      _num in set(hand)])
-
+    return 0 
 
 def expected_value(held_dice, num_die_sides, num_free_dice):
     """
@@ -51,9 +47,6 @@ def expected_value(held_dice, num_die_sides, num_free_dice):
 
     Returns a floating point expected value
     """
-    _rolls = gen_all_sequences(range(1, num_die_sides+1), num_free_dice)
-    return sum([score(held_dice + _roll) for _roll in _rolls]) / float(len(_rolls))
-
 
 def gen_all_holds(hand):
     """
